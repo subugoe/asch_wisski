@@ -1,0 +1,19 @@
+web:
+  build: wisski
+  links:
+    - db
+  ports:
+    - "88:80"
+
+db:
+  build: mysql
+  ports:
+    - "3306"
+  env_file: mysql.env
+
+#test:
+#  build: test
+#  links:
+#    - db
+
+#curl -L https://github.com/docker/compose/releases/download/1.2.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
