@@ -36,3 +36,4 @@ xmlrpc.php
 /themes
 
 mysql.env
+.DS_Store
