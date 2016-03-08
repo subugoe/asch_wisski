@@ -124,7 +124,7 @@ $update_free_access = FALSE;
  */
 # $base_url = 'http://www.example.com';  // NO trailing slash!
 #$base_url = 'http://localhost:88/wisski';
-$base_url = 'http://$_SERVER['HTTP_HOST']/wisski';
+$base_url = 'http://'.$_SERVER['HTTP_HOST'].'/wisski';
 
 
 /**
