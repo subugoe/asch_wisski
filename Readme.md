@@ -5,7 +5,16 @@ image has to be build once manually with
 
 docker build -t asch/drupal .
 
-## Import mysql dump
+## Import and export mysql dump
 
-zcat mysql/wisski.sql.gz | docker exec -i dockerwisski_db_1 mysql -uwisski -pwisski -h127.0.0.1 wisski
+### Preperation
+On the shell source the file with the mysql account.
+
+. mysql.env                    # source the account settings for mysql
+
+#### Import
+zcat mysql/wisski.sql.gz | docker exec -i aschwisski_db_1 mysql -u$MYSQL_USER -p$MYSQL_PASSWORD -h127.0.0.1 $MYSQL_DATABASE
+#### Export
+docker exec -i aschwisski_db_1 mysqldump -u$MYSQL_USER -p$MYSQL_PASSWORD -h127.0.0.1 $MYSQL_DATABASE | gzip > mysql/wisski_$(date +%Y-%m-%d).sql.gz
+
 
