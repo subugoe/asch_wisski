@@ -1,1 +1,0 @@
-alias compose="docker run -v \"\$(pwd)\":/app ... dduportal/docker-compose"
