@@ -40,3 +40,7 @@ docker exec -i aschwisski_db_1 mysqldump --skip-extended-insert q-u$MYSQL_USER -
 * Loaded the ontology from http://erlangen-crm.org/150929/
 * Made SQL Dump  mysql/wisski_after_loading_ontology.sql.gz
 
+docker-compose up -d            # to start the WissKi
+
+## Import path definition
+* Administer -> "WissKI module settings" -> Pathbuilder -> "Import Paths" -> load e.g. https://github.com/subugoe/asch_wisski/tree/master/wisski/path_definition.xml
